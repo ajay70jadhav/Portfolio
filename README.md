@@ -4,7 +4,7 @@
 
 ## 🔗 Live Preview
 
-👉 [Visit My Portfolio](https://portfolio-ajayjadhav.netlify.app/)
+👉 [Visit My Portfolio](https://portfolio-ajay-jadhav.netlify.app/)
 
 ---
 

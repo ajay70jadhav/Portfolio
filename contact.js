@@ -1,5 +1,7 @@
+import emailjs from "emailjs-com";
+
 // Initialize EmailJS (Replace with your actual User ID)
-emailjs.init("wMAVrMjTMqPVm5S8D");
+emailjs.init("wMAVrMjTMqPVm5S8D"); // Use your correct EmailJS user ID
 
 // Contact form submission logic
 document.getElementById("sendMessage").addEventListener("click", function () {

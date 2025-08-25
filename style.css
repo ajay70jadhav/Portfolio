@@ -430,6 +430,8 @@ header ul a {
 .project-info:hover {
   box-shadow: 0 0 15px #727fde86;
   opacity: 0.7;
+  transition: 0.5s;
+  border-radius: 20px;
 }
 .hover-sign {
   position: absolute;

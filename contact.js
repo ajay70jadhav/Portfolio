@@ -1,16 +1,14 @@
 import emailjs from "emailjs-com";
 
 // Initialize EmailJS (Replace with your actual User ID)
-emailjs.init("wMAVrMjTMqPVm5S8D"); // Use your correct EmailJS user ID
+emailjs.init("JADHAVwMAVrMAJAYjTMqPVGULABm5S8D"); // Use your correct EmailJS user ID
 
 // Contact form submission logic
 document.getElementById("sendMessage").addEventListener("click", function () {
   const name = document
     .querySelector('.contact-box input[placeholder="Your Full Name"]')
     .value.trim();
-  const email = document
-    .querySelector('.contact-box input[placeholder="Your Email"]')
-    .value.trim();
+  const email = document.querySelector('.contact-box input[placeholder="Your Email"]').value.trim();
   const message = document
     .querySelector('.contact-box input[placeholder="Share Your Thoughts.... "]')
     .value.trim();
@@ -38,15 +36,10 @@ document.getElementById("sendMessage").addEventListener("click", function () {
         alert(`Thank you, ${name}! Your message has been sent successfully.`);
 
         // Clear the form after successful submission
-        document.querySelector(
-          '.contact-box input[placeholder="Your Full Name"]'
-        ).value = "";
-        document.querySelector(
-          '.contact-box input[placeholder="Your Email"]'
-        ).value = "";
-        document.querySelector(
-          '.contact-box input[placeholder="Share Your Thoughts.... "]'
-        ).value = "";
+        document.querySelector('.contact-box input[placeholder="Your Full Name"]').value = "";
+        document.querySelector('.contact-box input[placeholder="Your Email"]').value = "";
+        document.querySelector('.contact-box input[placeholder="Share Your Thoughts.... "]').value =
+          "";
       },
       function (error) {
         alert("Failed to send your message. Please try again later.");

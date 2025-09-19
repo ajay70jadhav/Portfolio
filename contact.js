@@ -1,13 +1,19 @@
-// Initialize EmailJS (Replace with your actual User ID)
-emailjs.init("JADHAVwMAVrMAJAYjTMqPVGULABm5S8D"); // Use your correct EmailJS user ID
+// Initialize EmailJS with your Public Key
+emailjs.init("wMAVrMjTMqPVm5S8D");
 
-// Contact form submission logic
+// Handle form submit
 document.getElementById("contact-form").addEventListener("submit", function (event) {
-  event.preventDefault();
-  const name = document.querySelector('input[name="from_name"]').value.trim();
-  const email = document.querySelector('input[name="reply_to"]').value.trim();
-  const message = document.querySelector('textarea[name="message"]').value.trim();
+  event.preventDefault(); // Prevent page reload
 
+  const form = this;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalText = submitButton.innerHTML;
+
+  const name = form.querySelector('input[name="from_name"]').value.trim();
+  const email = form.querySelector('input[name="reply_to"]').value.trim();
+  const message = form.querySelector('textarea[name="message"]').value.trim();
+
+  // Validate inputs
   if (!name || !email || !message) {
     alert("Please fill out all fields before sending your message.");
     return;
@@ -18,33 +24,26 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     return;
   }
 
+  submitButton.disabled = true;
+  submitButton.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Sending...';
+
   // Send email using EmailJS
   emailjs
-    .send("service_gggh9kw", "template_qx2feln", {
-      from_name: name,
-      reply_to: email,
-      message: message,
-      time: new Date().toLocaleString(),
-    })
+    .sendForm("service_gggh9kw", "template_qx2feln", form)
     .then(
       function (response) {
         alert(`Thank you, ${name}! Your message has been sent successfully.`);
-
-        // Clear the form after successful submission
-        document.querySelector('input[name="from_name"]').value = "";
-        document.querySelector('input[name="reply_to"]').value = "";
-        document.querySelector('textarea[name="message"]').value = "";
+        form.reset();
       },
       function (error) {
-        alert("Failed to send your message. Please try again later.");
-        console.error("Error:", error);
+        console.error("EmailJS Error:", error);
+        alert("Failed to send your message. Check console for details.");
       }
-    );
-
-  // Debugging logs
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Message:", message);
+    )
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalText;
+    });
 });
 
 // Helper function to validate email format

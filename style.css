@@ -283,7 +283,7 @@ header ul a {
   width: auto;
   height: 40vh;
   overflow: hidden;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   background-color: #080020b7;
   border-radius: 20px;
   transition: 0.3s;

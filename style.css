@@ -184,11 +184,17 @@ header ul a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animate-gradient 2.5s linear infinite;
+  animation: animate-gradient 4s ease-in-out infinite;
 }
 
 @keyframes animate-gradient {
-  to {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
     background-position: 200%;
   }
 }
@@ -388,7 +394,11 @@ header ul a {
   width: 100%;
   box-shadow: 0 0 10px lightgray;
   border-radius: 20px;
-  transition: 0.5s;
+  transition: box-shadow 0.5s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+.project-vidbox video:hover {
+  opacity: 1;
 }
 .project-vidbox video:hover {
   box-shadow: 0 0 20px lightgray;
@@ -451,16 +461,18 @@ header ul a {
   left: 40%;
   border-radius: 50%;
   padding: 10px;
-  animation: hoverAnimation 3s ease-in-out infinite;
+  animation: hoverAnimation 2s ease-in-out infinite alternate;
 }
 @keyframes hoverAnimation {
   0% {
     box-shadow: 0 0 5px lightgray;
-    transform: translate(100%, 50%) rotate(30deg);
+    transform: translate(100%, 50%) rotate(30deg) scale(0.8);
+    opacity: 0.5;
   }
   100% {
-    box-shadow: 0 0 5px lightgray;
-    transform: translate(80%, 50%) rotate(0deg);
+    box-shadow: 0 0 15px lightgray;
+    transform: translate(80%, 50%) rotate(0deg) scale(1);
+    opacity: 1;
   }
 }
 .hover-sign.active {
@@ -540,9 +552,7 @@ header ul a {
   left: 100%;
   animation: autoRun 10s linear infinite;
   transition: filter 0.5s;
-  animation-delay: calc(
-    (10s / var(--quantity)) * (var(--position) - 1) - 10s
-  ) !important;
+  animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s) !important;
 }
 .slider .list .item img {
   width: 100%;
@@ -554,6 +564,9 @@ header ul a {
   to {
     left: calc(var(--width) * -1);
   }
+}
+.slider .list .item {
+  animation: autoRun 10s ease-in-out infinite;
 }
 .slider:hover .item {
   animation-play-state: paused !important;
@@ -727,61 +740,37 @@ footer h1 {
 
 /* blur Effect animation */
 .autoBlur {
-  animation: autoBluranimation linear both;
-  animation-timeline: view();
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-@keyframes autoBluranimation {
-  0% {
-    filter: blur(40px);
-    opacity: 0;
-  }
-  35%,
-  65% {
-    filter: blur(0);
-    opacity: 1;
-  }
-  100% {
-    filter: blur(20px);
-    opacity: 0;
-  }
+.autoBlur.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 /* auto display animation */
 .autoDisplay {
-  animation: autoDisplayAnimation both;
-  animation-timeline: view();
+  opacity: 0;
+  transform: translateY(-200px) scale(0);
+  filter: blur(10px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;
 }
-@keyframes autoDisplayAnimation {
-  from {
-    filter: blur(10px);
-    transform: translateY(-200px) scale(0);
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0) scale(1);
-  }
+.autoDisplay.animate {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
 }
 /* FADEIN-RIGHT */
 .fadeInRight {
-  animation: fadeInAnimaiton both;
-  animation-timeline: view();
+  opacity: 0;
+  transform: translateX(-500px) scale(0.2);
+  filter: blur(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;
 }
-@keyframes fadeInAnimaiton {
-  0% {
-    opacity: 0;
-    transform: translateX(-500px) scale(0.2);
-    filter: blur(20px);
-  }
-  35%,
-  65% {
-    opacity: 1;
-    transform: translateX(-0px) scale(1);
-    filter: blur(0);
-  }
-  100% {
-    filter: blur(20px);
-  }
+.fadeInRight.animate {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
 }
 @media (max-aspect-ratio: 16/9) {
   .back-vid {

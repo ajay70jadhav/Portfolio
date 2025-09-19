@@ -152,14 +152,17 @@
             <div class="hover-sign"></div>
           </div>
           <div class="project-info fadeInRight">
-            <h1><span class="gradient">WhatsApp</span> <span>Clone</span> (Ongoing Project)</h1>
+            <h1><span class="gradient">Chatterly</span> (Ongoing Project)</h1>
             <p>
-              A real-time chat application built with the MERN stack and Socket.IO, enabling instant
-              messaging, user authentication, and media sharing. The app supports one-on-one and
-              group chats, message status updates, and a responsive UI for a seamless user
-              experience.
+              🔑 Google OAuth 2.0 Authentication – Easy and secure login.<br />
+              ⚡ Real-Time Messaging – Instant communication using Socket.IO.<br />
+              🟢 User Presence – See who's online or offline in real-time.<br />
+              📱 Responsive Design – Optimized for mobile and desktop.<br />
+              🚀 Deployed & Scalable – Frontend on Netlify, Backend & Socket server on Render.
             </p>
-            <button><i class="bx bx-link-external"></i>Website</button>
+            <a href="https://chatterllly.netlify.app/" target="_blank" style="text-decoration: none"
+              ><button><i class="bx bx-link-external"></i>Website</button></a
+            >
           </div>
         </div>
 
@@ -179,17 +182,24 @@
             <button><i class="bx bx-link-external"></i>Website</button>
           </div>
         </div>
+
         <div class="project-card">
           <div class="project-vidbox autoBlur">
             <video muted id="projectVideo-3" src="./videos/Socialmedia - Trim.mp4"></video>
           </div>
           <div class="project-info fadeInRight">
-            <h1>Social <span class="gradient">Media Platform</span> (Ongoing Project)</h1>
+            <h1>
+              Full-Stack Real-Time <span class="gradient">AI Voice Interview Agent</span> (Next.js,
+              Tailwind CSS, Vapi, Firebase)
+            </h1>
             <p>
-              A dynamic social media app built with the MERN stack, featuring user authentication,
-              post creation, image uploads, likes, and comments. The frontend uses React.js, Redux
-              Toolkit, React Router, Formik, and Material UI, while the backend is powered by
-              Node.js, Express.js, MongoDB, JWT, and Multer.
+              09/25 – present<br />
+               Designed and developed a real-time AI voice interview platform enabling interactive
+              mock interviews.<br />
+               Built the frontend with Next.js and Tailwind CSS, ensuring a sleek and responsive
+              user experience.<br />
+               Integrated Vapi for AI-powered voice interaction and used Firebase for secure
+              authentication and real-time session management.
             </p>
             <button><i class="bx bx-link-external"></i>Website</button>
           </div>
@@ -230,10 +240,13 @@
         /
         /
         -->
+
+          <!-- slider -->
+
           <div
             class="slider"
             reverse="true"
-            style="--width: 90px; --height: 90px; --quantity: 9; margin: 10px"
+            style="--width: 90px; --height: 90px; --quantity: 8; margin: 10px"
           >
             <div class="list">
               <div class="item" style="--position: 1">
@@ -260,9 +273,6 @@
               <div class="item" style="--position: 8">
                 <img src="images/8.png" alt="" />
               </div>
-              <div class="item" style="--position: 9">
-                <img src="images/9.png" alt="" />
-              </div>
             </div>
           </div>
         </div>
@@ -270,30 +280,30 @@
 
       <!--===============section-3 =================-->
       <section id="contact" class="contact-section">
-        <h1 class="section-title autoDisplay">Let's Talk😊</h1>
+        <h1 class="section-title autoDisplay">Let's Talk 😊</h1>
+
         <div class="social-box autoBlur">
-          <a href="#"><i class="bx bxs-phone-call"></i>+91 9322241510</a>
-          <a href="https://www.instagram.com/ajay_jad.hav_18/"
-            ><i class="bx bxl-instagram-alt"></i>instagram</a
-          >
-          <a href="https://www.linkedin.com/in/ajay-jadhav-6652a3228/"
-            ><i class="bx bxl-linkedin-square"></i>linkedin</a
-          >
+          <a href="tel:+919322241510"><i class="bx bxs-phone-call"></i>+91 9322241510</a>
+          <a href="https://www.instagram.com/ajay_jad.hav_18/" target="_blank">
+            <i class="bx bxl-instagram-alt"></i> Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/ajay-jadhav-6652a3228/" target="_blank">
+            <i class="bx bxl-linkedin-square"></i> LinkedIn
+          </a>
         </div>
 
-        <div class="contact-box autoBlur">
-          <p>
-            Have a project idea, a collaboration proposal, or just want to chat? Feel free to reach
-            out!
-          </p>
+        <form id="contact-form" class="contact-box autoBlur">
           <p>Full Name</p>
-          <input type="text" placeholder="Your Full Name" />
+          <input type="text" name="from_name" placeholder="Your Full Name" required />
+
           <p>Email Address</p>
-          <input type="text" placeholder="Your Email" />
+          <input type="email" name="reply_to" placeholder="Your Email" required />
+
           <p>Your Message</p>
-          <input class="input-message" type="text" placeholder="Share Your Thoughts.... " />
-          <button><i class="bx bx-send"></i>Send Message</button>
-        </div>
+          <textarea name="message" placeholder="Share Your Thoughts...." required></textarea>
+
+          <button type="submit"><i class="bx bx-send"></i> Send Message</button>
+        </form>
       </section>
       <footer>
         <h1>Copyright © 2024 Ajay Jadhav. All rights reserved.</h1>

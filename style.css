@@ -362,7 +362,8 @@ header ul a {
 .my-projects {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 100px;
+  justify-content: center;
   align-items: center;
   position: relative;
   width: 80%;
@@ -437,12 +438,7 @@ header ul a {
   cursor: pointer;
   transition: 0.3s;
 }
-.project-info:hover {
-  box-shadow: 0 0 15px #727fde86;
-  opacity: 0.7;
-  transition: 0.5s;
-  border-radius: 20px;
-}
+
 .hover-sign {
   position: absolute;
   display: flex;
